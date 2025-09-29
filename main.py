@@ -3,17 +3,17 @@ import sqlite3
 conexao = sqlite3.connect("biblioteca.db")
 cursor = conexao.cursor()
 
-# # #ETAPA 1 - Criando uma tabela no banco chamada de "livros"
-# cursor.execute("""
-#  CREATE TABLE IF NOT EXISTS livros (
-#       id INTEGER PRIMARY KEY AUTOINCREMENT,
-#       titulo TEXT NOT NULL,
-#       autor TEXT NOT NULL,
-#       ano INTEGER,
-#       disponivel TEXT NOT NULL
-#       )                                 
-# """)
-# print("tabela criada comm sucesso !")
+# #ETAPA 1 - Criando uma tabela no banco chamada de "livros"
+cursor.execute("""
+ CREATE TABLE IF NOT EXISTS livros (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      titulo TEXT NOT NULL,
+      autor TEXT NOT NULL,
+      ano INTEGER,
+      disponivel TEXT NOT NULL
+      )                                 
+""")
+
 
 
 #Etapa 2 - Inserindo livros no banco de dados
@@ -31,8 +31,9 @@ def cadastrar_livros ():
     (titulo, autor, ano, disponivel))
     conexao.commit()
     conexao.close()
-cadastrar_livros()
-print("livro cadastrado com sucesso !")
+    print("livro cadastrado com sucesso!")
+
+
 
 
 #Etapa 3 - Listando Livros
@@ -107,14 +108,3 @@ def menu():
         else:
             print("opcao invalida")
 menu()
-
-        
-
-
-
-
-
-
-
-   
-        
