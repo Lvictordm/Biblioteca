@@ -45,7 +45,21 @@ def listar_livros ():
         print("lista de livros: ")
         for livro in livros:
             id, titulo, autor, ano, disponivel = livro
-            print(f"ID: {id}, titulo: {titulo}, autor: {autor}, ano: {ano}, disponivel{disponivel}" )
+            print(f"ID: {id}, titulo: {titulo}, autor: {autor}, ano: {ano}, disponivel{disponivel}")
+
+
+#Etapa 4 - Atualização de Disponibilidade
+def alterar_disponibilidade(id_livros):
+    cursor.execute("SELECT disponivel FROM biblioteca WHERE id = ?", {id_livros,})
+    resultado = cursor.fetchone()
+
+    disponivel_atual = resultado[0]
+    novo_valor = "nao" if disponivel_atual == "sim" else "sim"
+
+    cursor.execute("UPDATE biblioteca SET Disponivel == ? WHERE id =?", [novo_valor, id_livros])
+    conexao.commit()
+    print(f"Disponibilidade do livro ID {id_livros} alterada para '{novo_valor}'.")
+
 
 
 
