@@ -3,20 +3,20 @@ import sqlite3
 conexao = sqlite3.connect("biblioteca.db")
 cursor = conexao.cursor()
 
-# #ETAPA 1 - Criando uma tabela no banco chamada de "livros"
-cursor.execute("""
- CREATE TABLE IF NOT EXISTS livros (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      titulo TEXT NOT NULL,
-      autor TEXT NOT NULL,
-      ano INTEGER,
-      disponivel TEXT NOT NULL
-      )                                 
-""")
-print("tabela criada comm sucesso !")
+# # #ETAPA 1 - Criando uma tabela no banco chamada de "livros"
+# cursor.execute("""
+#  CREATE TABLE IF NOT EXISTS livros (
+#       id INTEGER PRIMARY KEY AUTOINCREMENT,
+#       titulo TEXT NOT NULL,
+#       autor TEXT NOT NULL,
+#       ano INTEGER,
+#       disponivel TEXT NOT NULL
+#       )                                 
+# """)
+# print("tabela criada comm sucesso !")
 
 
-#Etapa 2 - inserindo livros no banco de dados
+#Etapa 2 - Inserindo livros no banco de dados
 def cadastrar_livros ():
     conexao = sqlite3.connect("biblioteca.db")
     cursor = conexao.cursor()
@@ -35,3 +35,20 @@ cadastrar_livros()
 print("livro cadastrado com sucesso !")
 
 
+#Etapa 3 - Listando Livros
+def listar_livros ():
+    cursor.execute("SELECT * FROM livros")
+    livros = cursor.fetchall()
+    if not livros:
+        print("nao exite livros")
+    else:
+        print("lista de livros: ")
+        for livro in livros:
+            id, titulo, autor, ano, disponivel = livro
+            print(f"ID: {id}, titulo: {titulo}, autor: {autor}, ano: {ano}, disponivel{disponivel}" )
+
+
+
+
+   
+        
