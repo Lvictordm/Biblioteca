@@ -1,28 +1,28 @@
-Sistema de Biblioteca em SQLite
+📚 Sistema de Biblioteca em SQLite
 
-Este projeto é um sistema simples de gerenciamento de livros usando Python e SQLite. Ele permite cadastrar, listar, atualizar a disponibilidade e remover livros de uma biblioteca armazenada em um banco de dados local.
+Um sistema simples de gerenciamento de livros usando Python e SQLite, com funcionalidades para cadastrar, listar, atualizar e remover livros de um banco de dados local.
 
-Funcionalidades
+⚙️ Funcionalidades
 
-Criar uma tabela livros no banco de dados SQLite (biblioteca.db)
+📁 Criar a tabela livros no banco de dados SQLite (biblioteca.db)
 
-Cadastrar novos livros com título, autor, ano de lançamento e status de disponibilidade
+➕ Cadastrar novos livros (título, autor, ano de lançamento e status de disponibilidade)
 
-Listar todos os livros cadastrados
+📄 Listar todos os livros cadastrados
 
-Atualizar a disponibilidade de um livro (disponível ou não)
+🔄 Atualizar a disponibilidade de um livro (sim ou nao)
 
-Remover livros pelo ID
+❌ Remover livros pelo ID
 
-Menu interativo no console para navegar entre as opções
+🧭 Menu interativo no console para fácil navegação entre opções
 
-Tecnologias Utilizadas
+🛠️ Tecnologias Utilizadas
 
-Python 3
+🐍 Python 3
 
-SQLite3 (biblioteca padrão do Python)
+🗃️ SQLite3 (biblioteca padrão do Python)
 
-Como usar
+🚀 Como Usar
 
 Clone o repositório (ou copie o código para um arquivo .py):
 
@@ -33,12 +33,12 @@ Execute o script Python:
 
 python biblioteca.py
 
+📋 Menu Interativo
 
-Menu Interativo
+Ao executar o script, será exibido um menu como este:
 
-Ao rodar o programa, será exibido um menu com as opções:
+Menu Biblioteca
 
-Menu biblioteca
 1. Cadastrar livro
 2. Listar livros
 3. Atualizar disponibilidade
@@ -46,24 +46,36 @@ Menu biblioteca
 5. Sair
 
 
-Digite o número da opção desejada para executar a ação correspondente.
+Digite o número da opção desejada para realizar a ação correspondente.
 
-Estrutura do Banco de Dados
+🗄️ Estrutura do Banco de Dados
 
-Tabela livros com as colunas:
+O sistema utiliza uma tabela chamada livros com as seguintes colunas:
 
 Coluna	Tipo	Descrição
 id	INTEGER	Identificador único (autoincrement)
 titulo	TEXT	Título do livro (obrigatório)
 autor	TEXT	Nome do autor (obrigatório)
 ano	INTEGER	Ano de lançamento
-disponivel	TEXT	Indica se o livro está disponível ("sim" ou "nao")
-Observações Importantes
+disponivel	TEXT	Indica se o livro está disponível (sim ou nao)
+📝 Observações Importantes
 
-O banco de dados SQLite (biblioteca.db) será criado automaticamente no mesmo diretório do script, se não existir.
+O banco de dados biblioteca.db será criado automaticamente no mesmo diretório do script, caso não exista.
 
 A função de atualização de disponibilidade alterna entre "sim" e "nao".
 
-Ao remover um livro, é necessário informar o ID do livro listado.
+Para remover um livro, é necessário informar o ID exibido na listagem.
 
-Atualmente, o sistema usa entrada pelo console para todas as interações.
+Todo o sistema é operado via entrada de dados pelo console.
+
+📌 Exemplo de Uso
+Digite a opção desejada:
+1
+Digite o título do livro: Dom Casmurro
+Digite o nome do autor: Machado de Assis
+Digite o ano de lançamento: 1899
+Livro cadastrado com sucesso!
+
+📎 Licença
+
+Este projeto é de uso livre para fins de aprendizado.
